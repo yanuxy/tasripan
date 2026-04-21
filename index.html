@@ -3,198 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qian Jayadharma | Portofolio Estetik</title>
-    <style>
-    /* Konfigurasi Dasar */
-:root {
-    --sky-night: #0c1445;   /* Biru Malam Atas */
-    --sky-purple: #4b2c5e;  /* Ungu Transisi */
-    --sky-sunset: #ff7e5f;  /* Oranye Senja */
-    --ocean-dark: #050b1a;  /* Biru Laut Dalam */
-    --accent: #ffd27d;      /* Emas Cahaya */
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    color: white;
-    background: linear-gradient(180deg, 
-                var(--sky-night) 0%, 
-                var(--sky-purple) 35%, 
-                var(--sky-sunset) 70%,
-                var(--ocean-dark) 100%);
-    background-attachment: fixed;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* Efek Permukaan Laut */
-.ocean-surface {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 35vh;
-    background: linear-gradient(0deg, 
-                rgba(5, 11, 26, 0.9) 0%, 
-                rgba(255, 126, 95, 0.1) 100%);
-    backdrop-filter: blur(8px);
-    z-index: 2;
-    pointer-events: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Navigasi */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(12, 20, 69, 0.2);
-    backdrop-filter: blur(15px);
-}
-
-.logo { font-size: 1.8rem; font-weight: 700; letter-spacing: -1px; }
-.logo span { color: var(--accent); }
-
-nav ul { display: flex; list-style: none; align-items: center; }
-nav ul li { margin-left: 35px; }
-nav ul li a { text-decoration: none; color: white; font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: 0.3s; }
-nav ul li a:hover { opacity: 1; color: var(--accent); }
-
-.nav-cta {
-    padding: 10px 20px;
-    border: 1px solid var(--accent);
-    border-radius: 50px;
-    color: var(--accent) !important;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 8%;
-    position: relative;
-}
-
-.glass-box {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(25px);
-    padding: 60px;
-    border-radius: 40px;
-    max-width: 850px;
-    text-align: center;
-    z-index: 10;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
-
-.badge {
-    background: rgba(255, 210, 125, 0.1);
-    color: var(--accent);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-h1 { font-size: 4rem; margin: 20px 0; font-weight: 700; line-height: 1.1; }
-.highlight { color: var(--accent); }
-.tagline { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 20px; font-weight: 400; }
-.description { color: #94a3b8; max-width: 600px; margin: 0 auto 30px auto; }
-
-.btn {
-    padding: 15px 35px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.btn-primary { background: var(--accent); color: var(--sky-night); }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 210, 125, 0.3); }
-
-/* Atmosfer Shapes */
-.shape { position: absolute; border-radius: 50%; filter: blur(100px); z-index: 1; }
-.sun-glow { width: 400px; height: 400px; background: var(--sky-sunset); bottom: 10%; left: 50%; transform: translateX(-50%); opacity: 0.4; }
-.night-glow { width: 600px; height: 600px; background: #312e81; top: -100px; right: -100px; opacity: 0.3; }
-
-/* Portofolio Section */
-#projects {
-    padding: 120px 8%;
-    position: relative;
-    z-index: 5;
-    background: rgba(5, 11, 26, 0.85);
-}
-
-.section-title { text-align: center; margin-bottom: 60px; }
-.underline { width: 60px; height: 4px; background: var(--accent); margin: 15px auto; border-radius: 2px; }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    padding: 40px;
-    border-radius: 24px;
-    transition: 0.4s ease;
-}
-
-.card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-10px);
-    border-color: var(--accent);
-}
-
-.card-icon { font-size: 2.5rem; margin-bottom: 20px; }
-.card h3 { color: var(--accent); margin-bottom: 15px; }
-.card p { color: #94a3b8; font-size: 0.95rem; }
-
-/* Footer */
-footer {
-    padding: 80px 8% 120px 8%;
-    text-align: center;
-    background: var(--ocean-dark);
-    color: #64748b;
-    font-size: 0.9rem;
-    position: relative;
-    z-index: 5;
-}
-
-/* Responsivitas */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    nav ul { display: none; }
-    .glass-box { padding: 40px 20px; }
-}
-        
-    </style>
+    <title>Moyan | Personal Website</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#0c1445">
+    
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --sky-night: #0c1445;   /* Biru Malam Atas */
+            --sky-purple: #4b2c5e;  /* Ungu Transisi */
+            --sky-sunset: #ff7e5f;  /* Oranye Senja */
+            --ocean-dark: #050b1a;  /* Biru Laut Dalam */
+            --accent: #ffd27d;      /* Emas Cahaya */
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- DASAR --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: white;
+            /* Gradasi Langit Senja ke Malam */
+            background: linear-gradient(180deg, 
+                        var(--sky-night) 0%, 
+                        var(--sky-purple) 35%, 
+                        var(--sky-sunset) 70%,
+                        var(--ocean-dark) 100%);
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- EFEK LAUTAN --- */
+        .ocean-surface {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35vh;
+            background: linear-gradient(0deg, 
+                        rgba(5, 11, 26, 0.9) 0%, 
+                        rgba(255, 126, 95, 0.1) 100%);
+            backdrop-filter: blur(8px);
+            z-index: 2;
+            pointer-events: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(12, 20, 69, 0.2);
+            backdrop-filter: blur(15px);
+        }
+
+        .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: -1px; }
+        .logo span { color: var(--accent); }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 35px; }
+        nav ul li a { text-decoration: none; color: white; font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: 0.3s; }
+        nav ul li a:hover { opacity: 1; color: var(--accent); }
+
+        .nav-cta {
+            padding: 10px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            color: var(--accent) !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+        }
+
+        .glass-box {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(25px);
+            padding: 60px;
+            border-radius: 40px;
+            max-width: 850px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        h1 { font-size: 3.5rem; margin: 20px 0; font-weight: 700; line-height: 1.1; }
+        .highlight { color: var(--accent); }
+        .tagline { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 30px; font-weight: 400; }
+
+        .btn {
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+            background: var(--accent);
+            color: var(--sky-night);
+        }
+
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 210, 125, 0.3); }
+
+        /* --- INFORMASI PRIBADI --- */
+        .personal-info {
+            padding: 60px 8%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-item.full { grid-column: span 2; border-bottom: none; text-align: center; }
+
+        .label { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; display: block; }
+        .value { font-size: 1.1rem; color: white; margin-top: 5px; display: block; }
+
+        /* --- DECORATIVE SHAPES --- */
+        .shape { position: absolute; border-radius: 50%; filter: blur(100px); z-index: 1; opacity: 0.4; }
+        .sun { width: 300px; height: 300px; background: var(--sky-sunset); bottom: 15%; left: 50%; transform: translateX(-50%); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .info-grid { grid-template-columns: 1fr; }
+            .info-item.full { grid-column: span 1; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
 
@@ -204,56 +185,50 @@ footer {
         <div class="logo">QJ<span>.</span></div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Karya</a></li>
-            <li><a href="#contact" class="nav-cta">Hubungi Saya</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#contact" class="nav-cta">Kontak</a></li>
         </ul>
     </nav>
 
     <header id="home" class="hero">
         <div class="glass-box">
-            <span class="badge">Selamat Datang</span>
             <h1>Qian <span class="highlight">Jayadharma</span></h1>
-            <p class="tagline">Kreator Konten & Pengembang Digital</p>
-            <p class="description">
-                Menyatukan estetika visual senja dengan inovasi teknologi 
-                untuk menciptakan pengalaman digital yang tak terlupakan.
-            </p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">Lihat Portofolio</a>
-            </div>
+            <p class="tagline">Tinkerer, Agropreneur & Authorpreneur</p>
+            <a href="#about" class="btn">Kenali Saya Lebih Dalam</a>
         </div>
-
-        <div class="shape sun-glow"></div>
-        <div class="shape night-glow"></div>
+        <div class="shape sun"></div>
     </header>
 
-    <section id="projects">
-        <div class="section-title">
-            <h2>Proyek Terpilih</h2>
-            <div class="underline"></div>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📚</div>
-                <h3>Katalog Digital</h3>
-                <p>Sistem manajemen konten yang efisien dengan antarmuka yang bersih.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎨</div>
-                <h3>Visualisasi AI</h3>
-                <p>Eksperimen seni visual menggunakan AI untuk menghidupkan narasi novel.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">☁️</div>
-                <h3>Cloud System</h3>
-                <p>Integrasi penyimpanan awan mandiri untuk manajemen data terpusat.</p>
+    <section id="about" class="personal-info">
+        <div class="info-card">
+            <h2 style="text-align: center; margin-bottom: 20px;">Profil Pribadi</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Nama Lengkap</span>
+                    <span class="value">Tasripan</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Zodiak</span>
+                    <span class="value">Scorpion</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Hobi</span>
+                    <span class="value">Mencar hal baru atau mendalami sesuatu</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Lokasi</span>
+                    <span class="value">Indonesia</span>
+                </div>
+                <div class="info-item full">
+                    <span class="label">Prinsip Hidup</span>
+                    <span class="value">"Menikmati kehidupan dengan lebih bermakna"</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <p>&copy; 2026 Qian Jayadharma. Terinspirasi oleh keindahan cakrawala.</p>
+    <footer id="contact" style="text-align: center; padding: 100px 0; position: relative; z-index: 10; color: #64748b;">
+        <p>&copy; 2018 Moyan. semoga hidup anda bermakna.</p>
     </footer>
 
 </body>
