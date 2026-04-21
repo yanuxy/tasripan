@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Qian Jayadharma | Portofolio Estetik</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0c1445">
 </head>
 <body>
 
+    <div class="ocean-surface"></div>
+
     <nav>
-        <div class="container">
-            <h1 class="logo">PORTFOLIO<span>.</span></h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <div class="logo">QJ<span>.</span></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Karya</a></li>
+            <li><a href="#contact" class="nav-cta">Hubungi Saya</a></li>
+        </ul>
     </nav>
 
-    <header id="home">
-        <div class="hero-content">
-            <h2>Halo, Saya Kreator Digital</h2>
-            <p>Novelis | Developer | Video Editor</p>
-            <a href="#projects" class="btn">Lihat Karya</a>
+    <header id="home" class="hero">
+        <div class="glass-box">
+            <span class="badge">Selamat Datang</span>
+            <h1>Qian <span class="highlight">Jayadharma</span></h1>
+            <p class="tagline">Kreator Konten & Pengembang Digital</p>
+            <p class="description">
+                Menyatukan estetika visual senja dengan inovasi teknologi 
+                untuk menciptakan pengalaman digital yang tak terlupakan.
+            </p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">Lihat Portofolio</a>
+            </div>
         </div>
+
+        <div class="shape sun-glow"></div>
+        <div class="shape night-glow"></div>
     </header>
 
     <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Proyek Unggulan</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <h3>Web Development</h3>
-                    <p>Membangun platform katalog novel interaktif dengan sistem otomasi chapter.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <h3>Creative Writing</h3>
-                    <p>Produksi cerita original dengan visualisasi estetika manhwa modern.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <h3>Video Editing</h3>
-                    <p>Editing video sinematik untuk konten media sosial dan branding digital.</p>
-                </div>
+        <div class="section-title">
+            <h2>Proyek Terpilih</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Katalog Digital</h3>
+                <p>Sistem manajemen konten yang efisien dengan antarmuka yang bersih.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Visualisasi AI</h3>
+                <p>Eksperimen seni visual menggunakan AI untuk menghidupkan narasi novel.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">☁️</div>
+                <h3>Cloud System</h3>
+                <p>Integrasi penyimpanan awan mandiri untuk manajemen data terpusat.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Personal Website. Built with passion.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+    <footer id="contact">
+        <p>&copy; 2026 Qian Jayadharma. Terinspirasi oleh keindahan cakrawala.</p>
     </footer>
 
 </body>
